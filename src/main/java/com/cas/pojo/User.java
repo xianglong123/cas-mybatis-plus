@@ -5,13 +5,14 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.Version;
+import lombok.Data;
 
 import java.util.Date;
-
 
 /**
  * @author xianglong
  */
+@Data
 public class User {
 
     @TableId(type = IdType.AUTO)
@@ -44,20 +45,18 @@ public class User {
         this.email = email;
     }
 
-    public Integer getDeleted() {
-        return deleted;
-    }
-
-    public void setDeleted(Integer deleted) {
-        this.deleted = deleted;
-    }
-
-    public Integer getVersion() {
-        return version;
-    }
-
-    public void setVersion(Integer version) {
-        this.version = version;
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", email='" + email + '\'' +
+                ", deleted=" + deleted +
+                ", version=" + version +
+                ", createTime=" + createTime +
+                ", updateTime=" + updateTime +
+                '}';
     }
 
     public Long getId() {
@@ -92,6 +91,22 @@ public class User {
         this.email = email;
     }
 
+    public Integer getDeleted() {
+        return deleted;
+    }
+
+    public void setDeleted(Integer deleted) {
+        this.deleted = deleted;
+    }
+
+    public Integer getVersion() {
+        return version;
+    }
+
+    public void setVersion(Integer version) {
+        this.version = version;
+    }
+
     public Date getCreateTime() {
         return createTime;
     }
@@ -106,19 +121,5 @@ public class User {
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", age=" + age +
-                ", email='" + email + '\'' +
-                ", deleted=" + deleted +
-                ", version=" + version +
-                ", createTime=" + createTime +
-                ", updateTime=" + updateTime +
-                '}';
     }
 }
