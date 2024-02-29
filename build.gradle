@@ -1,9 +1,15 @@
+
 plugins {
     id 'org.springframework.boot' version '2.2.1.RELEASE'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
     id 'io.freefair.lombok' version '5.0.0-rc6' apply false
 }
+
+ext {
+    mybatisPlusVersion = '3.5.4'
+}
+
 
 group 'com.cas'
 version '0.0.1-SNAPSHOT'
@@ -18,7 +24,9 @@ repositories {
 dependencies {
     implementation 'com.alibaba:druid-spring-boot-starter:1.1.10'
     implementation 'mysql:mysql-connector-java:8.0.13'
-    implementation 'com.baomidou:mybatis-plus-boot-starter:3.4.2'
+    implementation "com.baomidou:mybatis-plus-boot-starter:${mybatisPlusVersion}"
+    implementation "com.baomidou:mybatis-plus-generator:${mybatisPlusVersion}"
+    implementation 'org.apache.velocity:velocity-engine-core:2.0'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation "org.projectlombok:lombok:1.18.12"
     testImplementation 'org.springframework.boot:spring-boot-starter-test'

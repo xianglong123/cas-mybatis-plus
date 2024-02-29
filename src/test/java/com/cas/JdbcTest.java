@@ -52,7 +52,7 @@ public class JdbcTest {
     @Test
     public void test() throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection conn = DriverManager.getConnection(URL, "root", "123456");
+        Connection conn = DriverManager.getConnection(URL, "root", "12345678");
         Statement stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery("select * from user");
 //        int i = stmt.executeUpdate("update user set age = 26");

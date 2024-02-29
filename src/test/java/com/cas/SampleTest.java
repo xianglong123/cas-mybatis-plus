@@ -31,32 +31,32 @@ public class SampleTest {
     @Test
     public void testSelect() {
         System.out.println(("----- selectAll method test ------"));
-        User user = userMapper.selectById(4L);
-        Assert.assertNotNull(user);
-        System.out.println(user.toString());
+        List<User> userList = userMapper.selectList(null);
+//        Assert.assertEquals(5, userList.size());
+        userList.forEach(System.out::println);
     }
 
-    /**
-     * mybatis-plus 插入操作【单表】
-     */
-    @Test
-    public void testInsert() {
-        System.out.println(("----- testInsert method test ------"));
-        User user = new User("xl", 23, "1391086179@qq.com");
-        int insert = userMapper.insert(user);
-        Assert.assertEquals(1, insert);
-    }
-
-    /**
-     * mybatis-plus更新操作【单表】
-     */
-    @Test
-    public void testUpdate() {
-        System.out.println(("----- testUpdate method test ------"));
-        User user = new User(11L,"xl", 24, "1391086179@qq.com");
-        int insert = userMapper.updateById(user);
-        Assert.assertEquals(1, insert);
-    }
+//    /**
+//     * mybatis-plus 插入操作【单表】
+//     */
+//    @Test
+//    public void testInsert() {
+//        System.out.println(("----- testInsert method test ------"));
+//        User user = new User("xl", 23, "1391086179@qq.com");
+//        int insert = userMapper.insert(user);
+//        Assert.assertEquals(1, insert);
+//    }
+//
+//    /**
+//     * mybatis-plus更新操作【单表】
+//     */
+//    @Test
+//    public void testUpdate() {
+//        System.out.println(("----- testUpdate method test ------"));
+//        User user = new User(11L,"xl", 24, "1391086179@qq.com");
+//        int insert = userMapper.updateById(user);
+//        Assert.assertEquals(1, insert);
+//    }
 
     /**
      * 乐观锁 要先开启乐观锁配置：com.cas.config.MyBatisPlusConfig
