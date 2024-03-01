@@ -1,8 +1,8 @@
 package com.cas;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.cas.mapper.UserMapper;
-import com.cas.pojo.User;
+import com.cas.entity.User;
+import com.cas.dao.UserMapper;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
